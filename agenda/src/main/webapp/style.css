@@ -1,0 +1,77 @@
+@charset "UTF-8";
+
+@import
+	url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap')
+	;
+
+body {
+	font-family: 'Open Sans', sans-serif;
+	font-size: 24px;
+	font-wight: 400;
+	text-align: center;
+	align-items: center;
+}
+
+h1 {
+	color: #000000;
+}
+
+div {
+	position: absolute;
+	widht: 100%;
+}
+
+.botao_acessar {
+	text-decoration: none;
+	background-color: #DCDCDC;
+	padding: 5px 10px 5px 10px;
+	color: #000000;
+	font-size: 18px;
+	font-wight: 400;
+	border-radius: 5px;
+	border: 0;
+	cursor: pointer;
+}
+
+.botao_novocontato {
+	text-decoration: none;
+	background-color: #1E90FF;
+	padding: 5px 10px 5px 10px;
+	color: #000000;
+	font-size: 18px;
+	font-wight: 400;
+	border-radius: 5px;
+	border: 0;
+	cursor: pointer;
+}
+
+.botao_adicionar {
+	text-decoration: none;
+	background-color: #1E90FF;
+	padding: 5px 10px 5px 10px;
+	color: #000000;
+	font-size: 18px;
+	font-wight: 400;
+	border-radius: 5px;
+	border: 0;
+	cursor: pointer;
+}
+
+.formContato {
+	position: absolute;
+	widht: 100%;
+}
+
+.caixa1 {
+	padding: 5px;
+	margin-bottom: 10px;
+	border: 1px solid #DCDCDC;
+	border-radius: 5px;
+}
+
+.caixa2 {
+	padding: 5px;
+	margin-bottom: 10px;
+	border: 1px solid #DCDCDC;
+	border-radius: 5px;
+}
