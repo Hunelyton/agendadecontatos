@@ -16,7 +16,7 @@ describe contatos;
 
 /*CRUD CREATE*/
 /*adicionando informaçãoes no BD manualmente*/
-insert into contatos(nome,telefone,email) values ('Hunelyton Mendes','13981196498','hunelyton.mendes@gmail.com');
+insert into contatos(nome,telefone,email) values ('?','?','?');
 
 
 /* CRUD READ */
