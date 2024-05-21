@@ -22,7 +22,7 @@ insert into contatos(nome,telefone,email) values ('?','?','?');
 /* CRUD READ */
 
 select * from contatos;
-
+select * from contatos order by nome;
 
 
 

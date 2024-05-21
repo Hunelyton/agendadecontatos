@@ -22,14 +22,16 @@ public class Controller extends HttpServlet {
 
 	}
 
-	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+	@Override
+	protected void doGet(HttpServletRequest request,
+			HttpServletResponse response)
 			throws ServletException, IOException {
 
 		String action = request.getServletPath();
 		System.out.println(action);
 		if (action.equals("/main")) {
 			contatos(request, response);
-		} else if (action.equals("insert")) {
+		} else if (action.equals("/insert")) {
 			novoContato(request, response);
 		} else {
 			response.sendRedirect("index.html");
@@ -37,19 +39,21 @@ public class Controller extends HttpServlet {
 	}
 
 	// listar contatos
-	protected void contatos(HttpServletRequest request, HttpServletResponse response)
+	protected void contatos(HttpServletRequest request,
+			HttpServletResponse response)
 			throws ServletException, IOException {
 		response.sendRedirect("agenda.jsp");
 	}
 
 	// Novo Contato
-	protected void novoContato(HttpServletRequest request, HttpServletResponse response)
+	protected void novoContato(HttpServletRequest request,
+			HttpServletResponse response)
 			throws ServletException, IOException {
 
 		// Variáveis JavaBeans
 		contato.setNome(request.getParameter("nome"));
-		contato.setNome(request.getParameter("telefone"));
-		contato.setNome(request.getParameter("email"));
+		contato.setTelefone(request.getParameter("telefone"));
+		contato.setEmail(request.getParameter("email"));
 
 		// inserirContato
 		dao.inserirContato(contato);

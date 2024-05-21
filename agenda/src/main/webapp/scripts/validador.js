@@ -1,19 +1,19 @@
 /**
- * validar Formulatios
+ * validar Formularios
  * @author Hunelyton Mendes
  */
 function validar() {
-	let nome = frmContato.nome.value
-	let telefone = frmContato.telefone.value
+	let nome = formContato.nome.value
+	let telefone = formContato.telefone.value
 	if (nome === "") {
 		alert('Preencha o campo Nome')
-		frmContato.nome.focus()
+		formContato.nome.focus()
 		return false
-	} else if (fone === "") {
+	} else if (telefone === "") {
 		alert('Preencha o campo Telefone')
-		frmContato.telefone.focus()
+		formContato.telefone.focus()
 		return false
 	} else {
-		document.forms["frmContato"].submit()
+		document.forms["formContato"].submit()
 	}
 }

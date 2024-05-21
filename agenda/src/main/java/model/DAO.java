@@ -7,9 +7,9 @@ import java.sql.PreparedStatement;
 public class DAO {
 	/** Módulo de conexão **/
 	// parametros de conexção
-	private String driver = "com.mysql.cj.jdbc.Driver";
-	private String url = "jdbc:mysql://127.0.0.1:3306/agenda?useTimezone=true&serverTimezone=UTC";
-	private String user = "root";
+	private final String driver = "com.mysql.cj.jdbc.Driver";
+	private final String url = "jdbc:mysql://127.0.0.1:3306/agenda?useTimezone=true&serverTimezone=UTC";
+	private final String user = "root";
 	private String password = "Hume1006@*";
 
 	// métodos de conexão
@@ -27,7 +27,7 @@ public class DAO {
 
 	/* CRUD CREAT */
 	public void inserirContato(JavaBeans contato) {
-		String create = "insert into (nome,telefone,email) values (?,?,?)";
+		String create = "insert into contatos (nome,telefone,email) values (?,?,?)";
 		try {
 
 			// abrir conexão com o BD
