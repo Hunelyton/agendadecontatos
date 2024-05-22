@@ -1,7 +1,9 @@
 package controller;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -23,8 +25,7 @@ public class Controller extends HttpServlet {
 	}
 
 	@Override
-	protected void doGet(HttpServletRequest request,
-			HttpServletResponse response)
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
 		String action = request.getServletPath();
@@ -39,15 +40,19 @@ public class Controller extends HttpServlet {
 	}
 
 	// listar contatos
-	protected void contatos(HttpServletRequest request,
-			HttpServletResponse response)
+	protected void contatos(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		response.sendRedirect("agenda.jsp");
+		// Criando objeto que vai receber os dados do JavaBeans
+		ArrayList<JavaBeans> lista = dao.listarContatos();
+		//encaminando a lista ao doc agenda.jsp
+		request.setAttribute("contatos", lista);
+		RequestDispatcher rd = request.getRequestDispatcher("agenda.jsp");
+		rd.forward(request, response);
 	}
+	
 
 	// Novo Contato
-	protected void novoContato(HttpServletRequest request,
-			HttpServletResponse response)
+	protected void novoContato(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
 		// Variáveis JavaBeans

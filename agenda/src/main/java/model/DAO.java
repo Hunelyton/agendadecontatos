@@ -3,6 +3,8 @@ package model;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.util.ArrayList;
 
 public class DAO {
 	/** Módulo de conexão **/
@@ -44,7 +46,7 @@ public class DAO {
 			// Executa a query
 			pst.executeUpdate();
 
-			// Encerra a conexão com o BD por segurança
+			// Encerra a conexão com o BD por melhorar o desempenho e segurança
 			con.close();
 
 		} catch (Exception e) {
@@ -52,5 +54,35 @@ public class DAO {
 
 		}
 
+	}
+
+	/** CRUD READ **/
+	public ArrayList<JavaBeans> listarContatos() {
+		// Objeto para acessar o JavaBeans
+		ArrayList<JavaBeans> contatos = new ArrayList<>();
+		String read = "select * from contatos order by nome";
+		try {
+			// abrir conexão com BD
+			Connection con = conectar();
+			PreparedStatement pst = con.prepareStatement(read);
+			ResultSet rs = pst.executeQuery();
+			// enquanto houver contatos o laço abaixo vai sempre estar rodando para trazer a
+			// ordem
+			while (rs.next()) {
+				// variavel que recebe dados do BD
+				String id = rs.getString(1);
+				String nome = rs.getString(2);
+				String telefone = rs.getString(3);
+				String email = rs.getString(4);
+				// armazenando no vetor dinamico ( ArrayList)
+				contatos.add(new JavaBeans(id, nome, telefone, email));
+			}
+			// Encerrando conexão com BD
+			con.close();
+			return contatos;
+		} catch (Exception e) {
+			System.out.println(e);
+			return null;
+		}
 	}
 }

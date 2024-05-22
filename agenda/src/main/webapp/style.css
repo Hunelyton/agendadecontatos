@@ -40,7 +40,7 @@ h1 {
 
 .botao_novocontato {
 	text-decoration: none;
-	background-color: #1E90FF;
+	background-color: #DCDCDC;
 	padding: 5px 10px 5px 10px;
 	color: #000000;
 	font-size: 18px;
@@ -52,7 +52,7 @@ h1 {
 
 .botao_adicionar {
 	text-decoration: none;
-	background-color: #1E90FF;
+	background-color: #DCDCDC;
 	padding: 5px 10px 5px 10px;
 	color: #000000;
 	font-size: 18px;
@@ -77,3 +77,26 @@ h1 {
 	border: 1px solid #DCDCDC;
 	border-radius: 5px;
 }
+
+#tabela {
+	margin-top: 40px;	
+	border-collapse:collapse;
+
+}
+
+#tablea th {
+	border: 1px solid #ddd;
+	padding: 10px;
+	text-align: left;
+	backgroud-color: #DCDCDC;
+	color: #000000;
+}
+#tabela td{
+	border: 1px solid #ddd;
+	padding: 10px;
+		
+}
+
+
+
+
